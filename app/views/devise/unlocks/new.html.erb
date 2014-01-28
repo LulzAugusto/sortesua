@@ -1,0 +1,13 @@
+<h2>Resend unlock instructions</h2>
+
+<%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post, :class => 'well form-inline' }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <%= f.submit "Reenviar instruções de desbloqueio", :class => 'btn btn-primary'%>
+
+  <div><%= f.submit "Resend unlock instructions" %></div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

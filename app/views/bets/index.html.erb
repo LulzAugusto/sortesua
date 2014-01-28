@@ -1,0 +1,22 @@
+<div class="page-header">
+  <h1>Suas Apostas</h1>
+</div>
+
+<div id="bets">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Números</th>
+        <th>Resultado</th>
+        <th>Concurso</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @bets %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "Nova aposta", new_bet_path(:format => :js), :remote => true, :id => 'new_bet_link', :class => 'btn btn-primary' %>

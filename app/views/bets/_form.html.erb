@@ -1,0 +1,26 @@
+<%= form_for @bet, :remote => true, :html => {:class => 'form-horizontal new_bet'} do |b| %>
+  <fieldset>
+    <div class="control-group">
+      <%= b.label :lotto_type_id, 'Tipo', :class => 'control-label' %>
+      <div class="controls">
+      <% LottoType.all.each do |type| %>
+        <label class="radio inline">
+          <%= radio_button_tag 'bet[lotto_type_id]', type.id, @bet.type_matches?(type.id), :class => 'radio inline', :id => dom_id(type) %> <%= type.name %>
+        </label>
+      <% end %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= b.label :numbers, 'Números', :class => 'control-label' %>
+      <div class="controls">
+        <%= b.text_field :numbers %>
+        <p class="help-block">Digite somente números separados por vírgulas. (Ex: 3,13,27...)</p>
+      </div>      
+    </div>
+
+    <div class='form-actions'>
+      <%= submit_or_cancel(b) %>
+    </div>
+  </fieldset>
+<% end %>

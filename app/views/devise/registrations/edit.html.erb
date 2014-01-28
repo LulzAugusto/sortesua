@@ -1,0 +1,43 @@
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal user_edit'}) do |f| %>
+  <%= devise_error_messages! %>
+  <fieldset>
+    <legend>Editar conta</legend>
+    <div class="control-group">
+      <%= f.label :email, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.email_field :email %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :password, 'Senha', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.password_field :password %>
+        <p class="help-block">Deixe em branco caso não queira mudar.</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :password_confirmation, 'Confirmação de senha', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.password_field :password_confirmation %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :current_password, 'Senha atual', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.password_field :current_password %>
+        <p class="help-block">Precisamos da sua senha atual para efetuar as mudanças.</p>
+      </div>
+    </div>
+
+    <div class="form-actions"><%= f.submit "Atualizar", :class => 'btn btn-primary' %></div>
+  </fieldset>
+<% end %>
+
+<h3>Cancelar minha conta</h3>
+
+<p>Decepcionado? <%= link_to "Cancele sua conta", registration_path(resource_name), :confirm => "Você tem certeza?", :method => :delete %>.</p>
+
+<%= link_to "Voltar", :back %>

@@ -1,0 +1,3 @@
+<%= render :file => 'bets/cancel.js.erb' %>
+$("<%= escape_javascript render 'form' %>").insertAfter('#bets');
+$('#new_bet_link').hide();

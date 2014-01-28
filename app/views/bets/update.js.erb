@@ -1,0 +1,3 @@
+$('.edit_bet').remove();
+$("#<%= dom_id(@bet) %>").replaceWith("<%= escape_javascript(render @bet) %>");
+$('#new_bet_link').show();

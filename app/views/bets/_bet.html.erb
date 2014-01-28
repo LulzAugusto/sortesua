@@ -1,0 +1,7 @@
+<tr id="<%= dom_id(bet) %>">
+  <td class="td-nowrap"><%= bet.lotto_type.name %></td>
+  <td><%= bet.show_numbers %></td>
+  <td><%= show_result(bet) %></td>
+  <td><%= bet.lotto_type.results.limit(1).order('contest DESC')[0].contest.to_s %></td>
+  <td class="td-nowrap"><%= link_to 'Editar', edit_bet_path(bet, :format => :js), :remote => true, :class => 'edit_bet_link btn btn-mini', :id => dom_id(bet) + '_edit_link' %> <%= link_to "Últimos 5", show_last_five_path(bet, :format => :js), :remote => true, :class => 'show_last_five_link btn btn-mini', :id => dom_id(bet) + '_last_five_link' %> <%= link_to "Deletar", bet, :confirm => 'Você tem certeza?', :method => :delete, :remote => true, :class => 'destroy_bet_link btn btn-danger btn-mini', :id => dom_id(bet) + '_delete_link' %></td>
+</tr>

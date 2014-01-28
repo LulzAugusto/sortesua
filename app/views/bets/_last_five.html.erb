@@ -1,0 +1,10 @@
+<% 5.times do |i| %>
+  <tr class="last_five">
+    <td colspan="2"></td>
+    <td><%= show_last_five_results(@result, i) %></td>
+    <td><%= @result[0][i] %></td>
+    <% if i < 1 %>
+      <td><%= link_to('Ocultar', cancel_path(:format => :js), :remote => true, :class => 'cancel btn btn-inverse') %></td>
+    <% end %>
+  </tr>
+<% end %>

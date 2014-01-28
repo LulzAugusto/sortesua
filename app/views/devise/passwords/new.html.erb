@@ -1,0 +1,11 @@
+<h2>Esqueceu sua senha?</h2>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => 'well form-inline' }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <%= f.submit "Enviar instruções", :class => 'btn btn-primary' %>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

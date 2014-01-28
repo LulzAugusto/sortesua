@@ -1,0 +1,5 @@
+<%= render :file => 'bets/cancel.js.erb' %>
+$("<tr class='edit_bet'><td colspan='5'><%= escape_javascript render 'form' %></td></tr>").insertAfter('#<%= dom_id(@bet) %>');
+$('#bet_numbers').val("<%= escape_javascript(@bet.numbers.join(',')) %>")
+$("#<%= dom_id(@bet) + '_edit_link' %>").hide();
+$('#new_bet_link').hide();
